@@ -1,0 +1,11 @@
+SELECT count(*) FROM (
+	SELECT docid, (term)
+	FROM (
+		SELECT docid, term, count(DISTINCT term) FROM frequency GROUP BY docid HAVING count(term) > 300
+	) x
+	GROUP BY 
+	HAVING count(term) > 300
+) y;
+
+SELECT docid, term, count(DISTINCT term) FROM frequency GROUP BY docid HAVING count(term) > 300;
+

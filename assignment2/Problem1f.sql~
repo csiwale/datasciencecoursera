@@ -1,0 +1,17 @@
+SELECT count(*) FROM (
+	SELECT * 
+	FROM ( 
+			SELECT * 	 
+			FROM frequency f1
+			WHERE term="transaction" 
+		  ), 
+		  ( 
+			SELECT * 	 
+			FROM frequency f2
+			WHERE term="world" 
+		  )
+	WHERE f1.docid = f2.docid
+
+
+) x;
+

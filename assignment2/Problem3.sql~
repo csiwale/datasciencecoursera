@@ -1,0 +1,2 @@
+CREATE VIEW TransD (docid, term, count)
+AS SELECT term, docid, count FROM frequency;
